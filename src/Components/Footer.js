@@ -1,4 +1,3 @@
-import React from "react";
 import "./Footer.css"; 
 
 const Footer = () => {  
@@ -15,12 +14,12 @@ const Footer = () => {
         <div className="footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="/hero">Home</a></li>
+            <li><a href="/about">About</a></li>
             {/* <li><Link to="/jobseeker/jobs">Browse Jobs</Link></li> */}
                         <li><a href="#">Browse Jobs</a></li>
 
-            <li><a href="#company">Companies</a></li>
+            <li><a href="/company">Companies</a></li>
           </ul>
         </div>
 
@@ -28,9 +27,9 @@ const Footer = () => {
         <div className="footer-social">
           <h3>Follow Us</h3>
           <div className="social-icons">
-            <a href="#" target="_blank" rel="noopener noreferrer">🔵 Github</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">🔵 Twitter</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">🔵 LinkedIn</a>
+            <a href="/login" target="_blank" rel="noopener noreferrer">🔵 Github</a>
+            <a href="/login" target="_blank" rel="noopener noreferrer">🔵 Twitter</a>
+            <a href="/login" target="_blank" rel="noopener noreferrer">🔵 LinkedIn</a>
           </div>
         </div>
       </div>
