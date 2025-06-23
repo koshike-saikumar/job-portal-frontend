@@ -1,8 +1,6 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
 // import { jwtDecode } from 'jwt-decode'
 import './Login.css'
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { handleSuccess, handleError } from './utils';
 import { ToastContainer } from 'react-toastify'
 import { FormikProvider, useFormik } from 'formik';
@@ -21,7 +19,7 @@ const Login = () => {
     const submitDetails = async (values) => {
         console.log("karthik", values)
 
-
+   
          try {
 
             const requestData = { ...values, password: values.password };
