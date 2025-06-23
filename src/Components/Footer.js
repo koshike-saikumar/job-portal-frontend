@@ -17,8 +17,8 @@ const Footer = () => {
             <li><a href="/hero">Home</a></li>
             <li><a href="/about">About</a></li>
             {/* <li><Link to="/jobseeker/jobs">Browse Jobs</Link></li> */}
-                        <li><a href="#">Browse Jobs</a></li>
-
+                        <li><a href="/jobs">Browse Jobs</a></li>
+  
             <li><a href="/company">Companies</a></li>
           </ul>
         </div>
