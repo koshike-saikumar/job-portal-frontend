@@ -59,16 +59,29 @@ function Home() {
     <Navbar/>
     <div className="home-container"> 
       {/* Hero Section */}
-      <section className="hero" id='hero'>
-        <div className="hero-content">
-          <h1>Find Your Dream Job with <span className="highlight"> <br></br>Workify</span></h1>
-          <p>Connecting job seekers with top employers in just a few clicks.</p>
-          <div className="hero-buttons">
-           <button onClick={() => navigate('/signup')} className="btn-primary">Get Started</button>
-           <button onClick={() => navigate('/login')} className="btn-secondary">Login</button>
-          </div>
-        </div>
-      </section>
+      <section className="hero" id="hero">
+  {/* Background Video */}
+  <video autoPlay loop muted playsInline className="hero-video">
+    <source
+      src="https://media.istockphoto.com/id/2162666822/video/top-down-view-of-employees-working-in-office-utilizing-artificial-intelligence-productivity.mp4?s=mp4-640x640-is&k=20&c=utMN0sLwYNa7VH9oFHHKLjr-UbFtou_9hi6nFRvxz48="
+      type="video/mp4"
+    />
+    Your browser does not support the video tag.
+  </video>
+
+  {/* Hero Content */}
+  <div className="hero-content">
+    <h1>
+      Find Your Dream Job with <span className="highlight"><br />Workify</span>
+    </h1>
+    <p>Connecting job seekers with top employers in just a few clicks.</p>
+    <div className="hero-buttons">
+      <button onClick={() => navigate('/signup')} className="btn-primary">Get Started</button>
+      <button onClick={() => navigate('/login')} className="btn-secondary">Login</button>
+    </div>
+  </div>
+</section>
+
 
       {/* Features Section */}
       <section className="features" id='features'>

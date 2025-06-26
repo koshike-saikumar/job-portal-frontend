@@ -7,6 +7,7 @@ import { FormikProvider, useFormik } from 'formik';
 import { handleSuccess, handleError } from './utils';
 import axios from 'axios';
 import { config } from '../CommonApi/CommonApis';
+import { useEffect } from 'react';
 
 
 const Login = () => {
@@ -81,32 +82,36 @@ const Login = () => {
 
 
 
-    // Check if user is already logged in and redirect
-    // useEffect(() => {
-    //     const token = localStorage.getItem("token");
-    //     const role = localStorage.getItem("role");
-    //     const tokenExp = localStorage.getItem("tokenExp");
-    //     const currentTime = Date.now();
+   // Check if user is already logged in and redirect
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        const role = localStorage.getItem("role");
+        const tokenExp = localStorage.getItem("tokenExp");
+        const currentTime = Date.now();
+        console.log('ssss',1)
 
-    //     if (token && role && tokenExp) {
-    //     if (currentTime < tokenExp) {
-    //         // Redirect to respective dashboard based on role
-    //         switch (role) {
-    //         case "Admin":
-    //             navigate("/admin/dashboard");
-    //             break;
-    //         case "Employer":
-    //             navigate("/employer/dashboard");
-    //             break;
-    //         case "Jobseeker":
-    //             navigate("/jobseeker/dashboard");
-    //             break;
-    //         default:
-    //             navigate("/");
-    //         }
-    //     }
-    //     }
-    // }, [navigate]);
+        if (token && role && tokenExp) {
+            console.log('ssss',2)
+        if (currentTime < tokenExp) {
+                        console.log('ssss',3)
+
+            // Redirect to respective dashboard based on role
+            switch (role) {
+            case "Admin":
+                navigate("/admin/dashboard");
+                break;
+            case "Employer":
+                navigate("/employer/dashboard");
+                break;
+            case "Jobseeker":
+                navigate("/jobseeker/dashboard");
+                break;
+            default:
+                navigate("/");
+            }
+        }
+        }
+    }, [navigate]);
 
 
     // const handleChange=(e)=>{

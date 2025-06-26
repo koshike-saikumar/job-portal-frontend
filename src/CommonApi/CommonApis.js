@@ -12,10 +12,11 @@ const local = { // 172.16.119.164   172.16.118.40
 
 const hostname = window.location.hostname  
 export const config = (() => {
-     if (process.env.NODE_ENV === 'main' && hostname === main.url.frontend_url) {
-        return main;
+    console.log('location:  ',hostname)
+     if ( hostname === 'localhost') {
+        return local;
     }  
    else  {
-        return local;
+        return main;
     }
 })();
