@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 
 
 const Login = () => {
-        const navigate = useNavigate();
+    const navigate = useNavigate();
 
     // const [loginInfo, setLoginInfo] = useState({
     //     email:'',
@@ -20,13 +20,13 @@ const Login = () => {
     const submitDetails = async (values) => {
         console.log("karthik", values)
 
-   
-         try {
+
+        try {
 
             const requestData = { ...values, password: values.password };
 
-            const response = await axios.post(config.url.test +'user-login', requestData)
-                        //const response = await axios.post('http://localhost:8080/test/user-login', requestData)
+            const response = await axios.post(config.url.test + 'user-login', requestData)
+            //const response = await axios.post('http://localhost:8080/test/user-login', requestData)
 
             if (response.data.code === "01") {
 
@@ -82,34 +82,34 @@ const Login = () => {
 
 
 
-   // Check if user is already logged in and redirect
+    // Check if user is already logged in and redirect
     useEffect(() => {
         const token = localStorage.getItem("token");
         const role = localStorage.getItem("role");
         const tokenExp = localStorage.getItem("tokenExp");
         const currentTime = Date.now();
-        console.log('ssss',1)
+        console.log('ssss', 1)
 
         if (token && role && tokenExp) {
-            console.log('ssss',2)
-        if (currentTime < tokenExp) {
-                        console.log('ssss',3)
+            console.log('ssss', 2)
+            if (currentTime < tokenExp) {
+                console.log('ssss', 3)
 
-            // Redirect to respective dashboard based on role
-            switch (role) {
-            case "Admin":
-                navigate("/admin/dashboard");
-                break;
-            case "Employer":
-                navigate("/employer/dashboard");
-                break;
-            case "Jobseeker":
-                navigate("/jobseeker/dashboard");
-                break;
-            default:
-                navigate("/");
+                // Redirect to respective dashboard based on role
+                switch (role) {
+                    case "Admin":
+                        navigate("/admin/dashboard");
+                        break;
+                    case "Employer":
+                        navigate("/employer/dashboard");
+                        break;
+                    case "Jobseeker":
+                        navigate("/jobseeker/dashboard");
+                        break;
+                    default:
+                        navigate("/");
+                }
             }
-        }
         }
     }, [navigate]);
 
@@ -166,15 +166,15 @@ const Login = () => {
     // }
     // }
     return (
-        
+
         <div className='main-container'>
-            
+
             <div className="login-container">
                 <h2>Login</h2>
                 <FormikProvider value={formIk}>
 
                     <form onChange={formIk.handleChange}
-onSubmit={formIk.handleSubmit}                    >
+                        onSubmit={formIk.handleSubmit}                    >
                         <input type="email" placeholder="Email" name='email' className="input"
                         //   onChange={handleChange}
                         />
@@ -185,7 +185,7 @@ onSubmit={formIk.handleSubmit}                    >
                         <button type="submit" className="button-50">Login</button>
                     </form>
                 </FormikProvider>
-                <p className="p">Don't have an account?<p onClick={() => navigate('/signup')}  className="link">Sign Up</p></p>
+                <p className="p">Don't have an account?<p onClick={() => navigate('/signup')} className="link">Sign Up</p></p>
                 <ToastContainer />
             </div>
         </div>

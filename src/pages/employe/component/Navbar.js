@@ -14,9 +14,9 @@ const Navbar = () => {
         <span className="company-name">CareerArcade</span>
       </div>
       <ul className="nav-links">
-        <li><Link to="/your-profile">Profile</Link></li>
-        <li><Link to="/employer-dashboard">Dashboard</Link></li>
-        <li><Link to="/employer/post-job">Post a Job</Link></li>
+        <li><Link to="/profile">Profile</Link></li>
+        <li><Link to="/employe-dashboard">Dashboard</Link></li>
+        <li><Link to="/employe-postjob">Post a Job</Link></li>
       </ul>
       <div className="auth-buttons">
         {/* <LogoutButton /> */}

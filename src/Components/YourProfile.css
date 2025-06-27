@@ -1,125 +1,263 @@
-/* Layout and Page */
+:root {
+  --primary-color: #4f46e5;
+  --primary-light: #6366f1;
+  --primary-dark: #4338ca;
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --text-color: #1f2937;
+  --text-light: #6b7280;
+  --border-color: #e5e7eb;
+  --background-color: #f9fafb;
+  --card-background: #ffffff;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
 .profile-page {
   display: flex;
-  height: 100vh;
-  width: 100vw;
-  background: linear-gradient(to right, #f8f9fa, #e9ecef);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--background-color);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
 .profile-container {
-  flex: 1;
-  max-width: 400px;
-  margin: auto;
-  padding: 30px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
-}
-
-/* Profile Info Card */
-.profile-info {
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 12px;
-  padding: 25px;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-}
-
-/* Form Layout */
-.form-group {
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #333;
-}
-
-input {
   width: 100%;
-  padding: 10px 14px;
-  border: 1px solid #ced4da;
-  border-radius: 8px;
-  font-size: 15px;
-  transition: border-color 0.3s ease;
+  max-width: 500px;
+  margin: auto;
+  padding: 2.5rem;
+  background: var(--card-background);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
 }
 
-input:disabled {
-  background-color: #f5f5f5;
-  color: #666;
-}
-
-/* Buttons */
-.button-group {
+.profile-header {
   display: flex;
-  gap: 12px;
-  margin-top: 20px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
-.edit-btn,
-.update-btn,
-.delete-btn {
-  flex: 1;
-  text-align: center;
-  padding: 12px;
+.profile-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.edit-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
   border: none;
   border-radius: 8px;
-  color: #fff;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s;
+  transition: all 0.2s ease;
 }
 
-.edit-btn {
-  background-color: #007bff;
+.edit-button:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-1px);
 }
 
-.update-btn {
-  background-color: #28a745;
+.edit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
-.delete-btn {
-  background-color: #dc3545;
+/* Profile Content */
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.edit-btn:hover,
-.update-btn:hover,
-.delete-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.92;
+.profile-avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
-/* Message Styles */
+.avatar-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.input-icon {
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background-color: #f8fafc;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  background-color: #fff;
+}
+
+.form-group input:disabled {
+  background-color: #f3f4f6;
+  color: var(--text-color);
+  cursor: not-allowed;
+}
+
+.password-hint {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.save-button, .cancel-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.save-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.save-button:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.save-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.cancel-button {
+  background-color: white;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.cancel-button:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-1px);
+}
+
+/* Messages */
 .message {
-  margin-bottom: 20px;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 14px;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .message-success {
-  background-color: #d4edda;
-  color: #155724;
+  background-color: #ecfdf5;
+  color: var(--success-color);
+  border: 1px solid #d1fae5;
 }
 
 .message-error {
-  background-color: #f8d7da;
-  color: #721c24;
+  background-color: #fef2f2;
+  color: var(--error-color);
+  border: 1px solid #fee2e2;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .button-group {
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.loading-container p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.error-state {
+  text-align: center;
+  padding: 2rem;
+  color: var(--error-color);
+  background-color: #fef2f2;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .profile-page {
+    padding: 1rem;
+  }
+
+  .profile-container {
+    padding: 1.5rem;
+  }
+
+  .action-buttons {
     flex-direction: column;
   }
 
-  .edit-btn,
-  .update-btn,
-  .delete-btn {
+  .save-button, .cancel-button {
     width: 100%;
   }
 }

@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import EmployeDashboard from './pages/employe/EmployeDashboard';
 import YourProfile from './Components/YourProfile';
+import PostJob from './pages/employe/PostJob';
 // import Jobs from './pages/admin/Jobs';
 // import Companies from './pages/admin/Companies';
 // import AddAdmin from './pages/admin/AddAdmin';
@@ -46,10 +47,10 @@ function App() {
           {/* </Route> */}
 
           {/* <Route element={<ProtectedRoute allowedRoles={["Employer"]} />}> */}
-            <Route path="/employer-dashboard" element={<EmployeDashboard />} />
-            {/* <Route path="/employer/post-job" element={<PostJob />} />
-            <Route path="/employer/job/:id" element={<Job />} /> */}
-          {/* </Route> */}
+            <Route path="/employe-dashboard" element={<EmployeDashboard />} />
+            <Route path="/employe-postjob" element={<PostJob />} />
+            {/* <Route path="/employer/job/:id" element={<Job />} />
+          </Route> */}
 
           {/* <Route element={<ProtectedRoute allowedRoles={["Admin"]} />}>
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
