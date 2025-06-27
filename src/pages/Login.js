@@ -34,7 +34,7 @@ const Login = () => {
                 handleSuccess(response.data.message);
                 setTimeout(() => {
                 }, 1000);
-
+                navigate('/employe-dashboard')
 
                 // localStorage.setItem("token",response.data.token)
                 // localStorage.setItem("refreshToken", response.data.refreshtoken)
