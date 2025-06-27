@@ -1,0 +1,125 @@
+/* Layout and Page */
+.profile-page {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-container {
+  flex: 1;
+  max-width: 400px;
+  margin: auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Profile Info Card */
+.profile-info {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  padding: 25px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Form Layout */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+input:disabled {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.edit-btn,
+.update-btn,
+.delete-btn {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.edit-btn {
+  background-color: #007bff;
+}
+
+.update-btn {
+  background-color: #28a745;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.edit-btn:hover,
+.update-btn:hover,
+.delete-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+/* Message Styles */
+.message {
+  margin-bottom: 20px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.message-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.message-error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+  }
+
+  .edit-btn,
+  .update-btn,
+  .delete-btn {
+    width: 100%;
+  }
+}

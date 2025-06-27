@@ -56,15 +56,19 @@ function Home() {
     ];
   return (
     <> 
-    <Navbar/>
     <div className="home-container"> 
+          <Navbar/>
+
       {/* Hero Section */}
       <section className="hero" id="hero">
   {/* Background Video */}
   <video autoPlay loop muted playsInline className="hero-video">
     <source
-      src="https://media.istockphoto.com/id/2162666822/video/top-down-view-of-employees-working-in-office-utilizing-artificial-intelligence-productivity.mp4?s=mp4-640x640-is&k=20&c=utMN0sLwYNa7VH9oFHHKLjr-UbFtou_9hi6nFRvxz48="
+      // src="https://media.istockphoto.com/id/2162666822/video/top-down-view-of-employees-working-in-office-utilizing-artificial-intelligence-productivity.mp4?s=mp4-640x640-is&k=20&c=utMN0sLwYNa7VH9oFHHKLjr-UbFtou_9hi6nFRvxz48="
+            src="https://videos.pexels.com/video-files/3209211/3209211-uhd_2560_1440_25fps.mp4"
+
       type="video/mp4"
+
     />
     Your browser does not support the video tag.
   </video>
