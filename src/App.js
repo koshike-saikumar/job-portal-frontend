@@ -12,6 +12,13 @@ import Signup from './pages/Signup';
 import EmployeDashboard from './pages/employe/EmployeDashboard';
 import YourProfile from './Components/YourProfile';
 import PostJob from './pages/employe/PostJob';
+import Job from './pages/employe/Job';
+import JobseekerDashboard from './pages/jobseeker/JobseekerDashboard';
+import SearchResults from './pages/jobseeker/SearchResults';
+import SearchComponent from './pages/jobseeker/component/SearchComponent';
+// import JobDetailsPage from './pages/jobseeker/JobDetailsPage';
+import { ToastContainer } from 'react-toastify';
+import MyApplications from './pages/jobseeker/MyApplications';
 // import Jobs from './pages/admin/Jobs';
 // import Companies from './pages/admin/Companies';
 // import AddAdmin from './pages/admin/AddAdmin';
@@ -27,30 +34,34 @@ import PostJob from './pages/employe/PostJob';
 function App() {
   return (
     <>
-     <Router>
+     <ToastContainer /> 
+      <Router>
         <Routes>
+           
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           {/* <Route path="/unauthorized" element={<Unauthorized />} /> */}
 
           {/* Protected Routes */}
-          {/* <Route element={<ProtectedRoute allowedRoles={["JobSeeker"]} />}>
-            <Route path="/jobseeker/dashboard" element={<JobSeekerDashboard />} />
-            <Route path="/jobseeker/jobs" element={<JobsPage />} />
-            <Route path="/jobseeker/jobs/:id" element={<JobDetailsPage />} />
-            <Route path="/jobseeker/search-results" element={<SearchResults />} />
-          </Route> */}
+          {/* <Route element={<ProtectedRoute allowedRoles={["JobSeeker"]} />}> */}
+          <Route path="/jobseeker-dashboard" element={<JobseekerDashboard />} />
+          <Route path="/jobseeker-Search-Jobs" element={<SearchComponent />} />
+
+          <Route path="/jobseeker-applications" element={<MyApplications />} />
+          {/* <Route path="/jobseeker-jobs" element={<JobDetailsPage />} /> */}
+          <Route path="/jobseeker/search-results" element={<SearchResults />} />
+          {/* </Route> */}
 
           {/* <Route element={<ProtectedRoute allowedRoles={["JobSeeker","Employer","Admin"]} />}> */}
-            <Route path="/profile" element={<YourProfile />} />
+          <Route path="/profile" element={<YourProfile />} />
           {/* </Route> */}
 
           {/* <Route element={<ProtectedRoute allowedRoles={["Employer"]} />}> */}
-            <Route path="/employe-dashboard" element={<EmployeDashboard />} />
-            <Route path="/employe-postjob" element={<PostJob />} />
-            {/* <Route path="/employer/job/:id" element={<Job />} />
-          </Route> */}
+          <Route path="/employe-dashboard" element={<EmployeDashboard />} />
+          <Route path="/employe-postjob" element={<PostJob />} />
+          <Route path="/employe-job" element={<Job />} />
+          {/* </Route> */}
 
           {/* <Route element={<ProtectedRoute allowedRoles={["Admin"]} />}>
             <Route path="/admin/dashboard" element={<AdminDashboard />} />

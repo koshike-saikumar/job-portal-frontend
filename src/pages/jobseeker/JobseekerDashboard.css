@@ -1,0 +1,121 @@
+/* JobseekerDashboard.css */
+
+.dashboard-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-primary {
+  color: #1890ff;
+  position: relative;
+  display: inline-block;
+}
+
+.text-primary::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #1890ff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.text-primary:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.jobs-section {
+  margin-top: 30px;
+}
+
+.job-card {
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.job-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.job-salary {
+  margin: 10px 0;
+  font-weight: 500;
+  color: #389e0d;
+}
+
+.job-type {
+  margin: 10px 0;
+}
+
+.job-skills {
+  margin: 15px 0;
+}
+
+.job-description {
+  margin: 15px 0;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.job-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.ant-card-head-title {
+  font-weight: 600;
+}
+
+.ant-tag {
+  margin-bottom: 4px;
+}
+
+.modal-content .ant-typography {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 15px;
+  }
+  
+  .ant-col {
+    margin-bottom: 16px;
+  }
+
+  .modal-content {
+    padding: 10px;
+  }
+}

@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../../Components/Navbar.css";
-// import Logo from '/img/image.png';
+// import Logo from '../img/image.png';
 // import LogoutButton from "../../../components/Logout";
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
+    <nav className="navbar z-index-10">
       <div className="logo">
         <img
           // src={Logo}
@@ -15,8 +15,9 @@ const Navbar = () => {
       </div>
       <ul className="nav-links">
         <li><Link to="/profile">Profile</Link></li>
-        <li><Link to="/employe-dashboard">Dashboard</Link></li>
-        <li><Link to="/employe-postjob">Post a Job</Link></li>
+        <li><Link to="/jobseeker-dashboard">Dashboard</Link></li>
+        <li><Link to="/jobseeker-Search-Jobs">Search for Jobs</Link></li>
+        <li><Link to="/jobseeker-applications">My Applications</Link></li>
         <li className="auth-buttons"><Link to="/">Log Out</Link></li>
 
       </ul>

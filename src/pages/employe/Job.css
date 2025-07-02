@@ -1,0 +1,175 @@
+/* Main container styles */
+.job-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Card styles */
+.job-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.job-card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Application card styles */
+.application-card {
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.application-card:hover {
+  border-color: #90caf9;
+  box-shadow: 0 2px 8px rgba(144, 202, 249, 0.3);
+}
+
+/* Status chip styles */
+.status-chip {
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 4px 8px;
+}
+
+.status-chip.Pending {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.status-chip.Reviewed {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.status-chip.Accepted {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-chip.Rejected {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* Tab styles */
+.custom-tabs .MuiTabs-indicator {
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+}
+
+.custom-tabs .MuiTab-root {
+  min-width: 120px;
+  text-transform: none;
+  font-weight: 500;
+  padding: 12px 16px;
+}
+
+.custom-tabs .Mui-selected {
+  color: #1976d2;
+  font-weight: 600;
+}
+
+/* Button styles */
+.action-button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Avatar styles */
+.avatar-large {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  background-color: #1976d2;
+}
+
+/* Cover letter box */
+.cover-letter-box {
+  background-color: #fafafa;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #1976d2;
+}
+
+/* Status update section */
+.status-update-section {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .job-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .delete-btn {
+    margin-top: 16px;
+    align-self: flex-end;
+  }
+  
+  .custom-tabs .MuiTab-root {
+    min-width: auto;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+  }
+}
+
+/* Animation for status change */
+@keyframes statusChange {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.status-updated {
+  animation: statusChange 0.5s ease;
+}
+
+/* Empty state styles */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #757575;
+}
+
+.empty-state-icon {
+  font-size: 48px;
+  color: #bdbdbd;
+  margin-bottom: 16px;
+}
+
+/* Divider styles */
+.section-divider {
+  margin: 24px 0;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Text field styles */
+.status-reason-field .MuiOutlinedInput-root {
+  border-radius: 8px;
+}
+
+.status-reason-field .MuiOutlinedInput-input {
+  padding: 12px 14px;
+}
+
+/* Count badge styles */
+.count-badge {
+  margin-left: 8px;
+  background-color: #e0e0e0;
+  color: #424242;
+  font-weight: 500;
+}

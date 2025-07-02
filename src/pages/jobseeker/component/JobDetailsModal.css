@@ -1,0 +1,83 @@
+/* JobDetailsModal.css */
+
+/* Modal header styling */
+.job-details-modal .modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.job-details-modal .modal-title {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Company name styling */
+.job-details-modal .text-primary {
+  color: #3498db !important;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Icon styling */
+.job-details-modal .bi {
+  margin-right: 0.3rem;
+  color: #7f8c8d;
+}
+
+/* Info spans styling */
+.job-details-modal .d-flex span {
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+/* Section headings */
+.job-details-modal h6 {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3rem;
+}
+
+/* Paragraph text styling */
+.job-details-modal p {
+  color: #34495e;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Requirements list styling */
+.job-details-modal ul {
+  padding-left: 1.2rem;
+}
+
+.job-details-modal ul li {
+  margin-bottom: 0.4rem;
+  color: #34495e;
+}
+
+/* Footer button styling */
+.job-details-modal .modal-footer .btn {
+  min-width: 100px;
+}
+
+.job-details-modal .modal-footer .btn-primary {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.job-details-modal .modal-footer .btn-primary:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .job-details-modal .d-flex {
+    flex-direction: column;
+    gap: 0.5rem !important;
+    align-items: flex-start;
+  }
+}

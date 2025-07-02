@@ -1,5 +1,4 @@
-// import { jwtDecode } from 'jwt-decode'
-import './Login.css'
+import { jwtDecode } from "jwt-decode"; import './Login.css'
 import { useNavigate } from "react-router-dom";
 // import { handleSuccess, handleError } from './utils';
 import { ToastContainer } from 'react-toastify'
@@ -18,7 +17,6 @@ const Login = () => {
     //     password:''
     // })
     const submitDetails = async (values) => {
-        console.log("karthik", values)
 
 
         try {
@@ -30,19 +28,30 @@ const Login = () => {
 
             if (response.data.code === "01") {
 
-                console.log("karthik", values)
                 handleSuccess(response.data.message);
                 setTimeout(() => {
                 }, 1000);
-                navigate('/employe-dashboard')
 
-                // localStorage.setItem("token",response.data.token)
-                // localStorage.setItem("refreshToken", response.data.refreshtoken)
-
+                const decoded = jwtDecode(response.data.token);
+                console.log("decoded", decoded)
+                localStorage.setItem("token", response.data.token)
                 // localStorage.setItem("email", JSON.stringify(decoded.data.empId))
-                // localStorage.setItem('userData', JSON.stringify(decoded.data))
-                // localStorage.setItem('userName', decoded.data.userId)
-                // localStorage.setItem('lastlogin', decoded.data.lastlogin_time)
+                localStorage.setItem('userId', JSON.stringify(decoded.userId))
+                localStorage.setItem('name', decoded.name)
+                localStorage.setItem('email', decoded.email)
+                localStorage.setItem('role', JSON.stringify(decoded.role))
+                if (decoded.role === 3) {
+                    navigate('/admin-dashboard')
+                }
+                else if (decoded.role === 1) {
+                    navigate('/employe-dashboard')
+                }
+                else if (decoded.role === 2) {
+                    navigate('/jobseeker-dashboard')
+                }
+                else {
+                    navigate('/')
+                }
             }
             else {
                 handleError(response.data.message);

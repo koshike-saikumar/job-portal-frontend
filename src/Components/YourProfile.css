@@ -1,38 +1,53 @@
 :root {
-  --primary-color: #4f46e5;
-  --primary-light: #6366f1;
-  --primary-dark: #4338ca;
-  --success-color: #10b981;
-  --error-color: #ef4444;
-  --text-color: #1f2937;
-  --text-light: #6b7280;
-  --border-color: #e5e7eb;
-  --background-color: #f9fafb;
-  --card-background: #ffffff;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --text: #1e293b;
+  --text-light: #64748b;
+  --border: #e2e8f0;
+  --background: #f8fafc;
+  --card-bg: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
 }
 
 /* Base Styles */
-.profile-page {
+.profile-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  width: 100%;
-  background-color: var(--background-color);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   padding: 2rem;
-  box-sizing: border-box;
+  background-color: var(--background);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.profile-container {
+.profile-card {
   width: 100%;
-  max-width: 500px;
-  margin: auto;
-  padding: 2.5rem;
-  background: var(--card-background);
-  border-radius: 16px;
+  max-width: 600px;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
 }
 
 .profile-header {
@@ -45,52 +60,23 @@
 .profile-header h2 {
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--text);
   margin: 0;
 }
 
-.edit-button {
+/* Avatar Section */
+.avatar-section {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.edit-button:hover {
-  background-color: var(--primary-light);
-  transform: translateY(-1px);
-}
-
-.edit-button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-/* Profile Content */
-.profile-content {
-  display: flex;
-  flex-direction: column;
   gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.profile-avatar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.avatar-circle {
+.avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: var(--primary-color);
+  background-color: var(--primary);
   color: white;
   display: flex;
   align-items: center;
@@ -100,9 +86,31 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Form Elements */
+.avatar-info h3 {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  color: var(--text);
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: #e0e7ff;
+  color: var(--primary-dark);
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Profile Details */
+.profile-details {
+  display: grid;
+  gap: 1.5rem;
+}
+
 .form-group {
-  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group label {
@@ -115,7 +123,7 @@
   margin-bottom: 0.5rem;
 }
 
-.input-icon {
+.icon {
   font-size: 1rem;
   color: var(--text-light);
 }
@@ -123,141 +131,190 @@
 .form-group input {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   font-size: 0.95rem;
   transition: all 0.2s ease;
-  background-color: #f8fafc;
+  background-color: var(--background);
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
   background-color: #fff;
 }
 
 .form-group input:disabled {
-  background-color: #f3f4f6;
-  color: var(--text-color);
+  background-color: #f1f5f9;
+  color: var(--text);
   cursor: not-allowed;
+  border-color: transparent;
+}
+
+.form-group input.edit-mode {
+  background-color: #fff;
+  border-color: var(--border);
 }
 
 .password-hint {
   font-size: 0.75rem;
   color: var(--text-light);
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   font-style: italic;
 }
 
-/* Action Buttons */
-.action-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.save-button, .cancel-button {
-  flex: 1;
+/* Buttons */
+.edit-btn,
+.save-btn,
+.cancel-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem;
+  padding: 0.65rem 1.25rem;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-size: 0.9rem;
 }
 
-.save-button {
-  background-color: var(--primary-color);
+.edit-btn {
+  background-color: var(--primary);
   color: white;
 }
 
-.save-button:hover {
-  background-color: var(--primary-light);
+.edit-btn:hover {
+  background-color: var(--primary-dark);
   transform: translateY(-1px);
 }
 
-.save-button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
+.save-btn {
+  background-color: var(--primary);
+  color: white;
+  flex: 1;
 }
 
-.cancel-button {
+.save-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.cancel-btn {
   background-color: white;
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
+  color: var(--text);
+  border: 1px solid var(--border);
+  flex: 1;
 }
 
-.cancel-button:hover {
-  background-color: #f3f4f6;
-  transform: translateY(-1px);
+.cancel-btn:hover {
+  background-color: #f1f5f9;
 }
 
-/* Messages */
-.message {
-  padding: 1rem;
-  border-radius: 8px;
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Alerts */
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
   margin-bottom: 1.5rem;
   font-size: 0.9rem;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
-.message-success {
+.alert-success {
   background-color: #ecfdf5;
-  color: var(--success-color);
+  color: var(--success);
   border: 1px solid #d1fae5;
 }
 
-.message-error {
+.alert-error {
   background-color: #fef2f2;
-  color: var(--error-color);
+  color: var(--error);
   border: 1px solid #fee2e2;
 }
 
 /* Loading State */
-.loading-container {
+.loader-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 2rem 0;
-}
-
-.loading-container p {
+  padding: 3rem 0;
   color: var(--text-light);
-  font-size: 0.9rem;
 }
 
-.error-state {
+.error-message {
   text-align: center;
   padding: 2rem;
-  color: var(--error-color);
+  color: var(--error);
   background-color: #fef2f2;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
 }
 
 /* Responsive Design */
-@media (max-width: 640px) {
-  .profile-page {
+@media (max-width: 768px) {
+  .profile-container {
     padding: 1rem;
   }
 
-  .profile-container {
+  .profile-card {
     padding: 1.5rem;
+  }
+
+  .avatar-section {
+    flex-direction: column;
+    text-align: center;
   }
 
   .action-buttons {
     flex-direction: column;
   }
 
-  .save-button, .cancel-button {
+  .save-btn,
+  .cancel-btn {
     width: 100%;
   }
 }
+
+
+.profile-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* .profile-header-wrapper {
+    position: relative;
+} */
+
+.back-button.top-right {
+  position: absolute;
+  top: 23px;
+  right: -191px;
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.back-button.top-right:hover {
+  background: #4f46e5;
+}
+
+/* Rest of your existing CSS */
+

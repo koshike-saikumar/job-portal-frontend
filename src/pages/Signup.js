@@ -18,7 +18,7 @@ const Signup = () => {
 
             const requestData = { ...values, password: values.password };
 
-            const response = await axios.post(config.url.test, 'user-register', requestData)
+            const response = await axios.post(config.url.test+'user-register', requestData)
             if (response.data.code === "01") {
 
                 console.log("karthik", values)

@@ -85,7 +85,7 @@ body {
 }
 
 .stat-icon {
-  font-size: 1.8rem;
+  font-size: 3.0rem;
   color: var(--primary-color);
   background: var(--highlight-bg);
   padding: 0.8rem;
@@ -347,5 +347,155 @@ body {
   
   .stat-item {
     padding: 0.5rem 0;
+  }
+}
+
+/* Analytics Tabs */
+.analytics-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  color: var(--subtext-color);
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.2s ease;
+}
+
+.tab-button.active {
+  color: var(--primary-color);
+  background-color: rgba(79, 70, 229, 0.1);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.tab-button:hover:not(.active) {
+  background-color: var(--highlight-bg);
+}
+
+/* Analytics Container */
+.analytics-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.chart-card {
+  background: var(--card-background);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.chart-card h3 {
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  font-size: 1.25rem;
+}
+
+.chart-wrapper {
+  height: 300px;
+  position: relative;
+}
+
+/* Job Skills */
+.job-skills {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--subtext-color);
+  padding: 0.5rem;
+  background: var(--highlight-bg);
+  border-radius: 6px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .analytics-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-wrapper {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .analytics-tabs {
+    justify-content: center;
+  }
+  
+  .tab-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+.tab-icon {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Make tabs scrollable on mobile */
+.analytics-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.analytics-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  color: var(--subtext-color);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.tab-button.active {
+  color: var(--primary-color);
+  background-color: rgba(79, 70, 229, 0.1);
+}
+
+.tab-button:hover:not(.active) {
+  background-color: var(--highlight-bg);
+}
+
+@media (max-width: 768px) {
+  .analytics-tabs {
+    gap: 0.25rem;
+  }
+  
+  .tab-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .tab-icon {
+    margin-right: 0.25rem;
+    font-size: 0.9rem;
   }
 }
